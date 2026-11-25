@@ -1699,3 +1699,362 @@ Features:
 ```
 
 Once you can build that without copying every line from a tutorial, your next stage should be **Pydantic in depth → SQLAlchemy ORM → PostgreSQL/MySQL → authentication/JWT → pytest → async/await → Docker and deployment**.
+
+
+=====================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+# **Python Interview Questions and Answers (Basic to Advanced)**
+
+Here are **60 important Python interview questions**, organized from beginner to advanced level, with simple explanations and practical examples. These are useful for Python Developer, Backend Developer, and FastAPI interviews.
+
+## **Level 1: Python Basics (Questions 1–15)**
+
+### **1. What is Python?**
+
+Python is a high-level, interpreted, general-purpose programming language. It is widely used for backend development, automation, data analysis, AI, and machine learning.
+
+### **2. What are the main features of Python?**
+
+- Easy to read and learn
+- Dynamically typed
+- Object-oriented
+- Automatic memory management
+- Large standard library
+- Supports multiple programming styles
+
+### **3. What is the difference between a list and a tuple?**
+
+| List                    | Tuple                  |
+| ----------------------- | ---------------------- |
+| Mutable                 | Immutable              |
+| Uses `[]`               | Uses `()`              |
+| Can add/remove elements | Cannot modify elements |
+| Good for changing data  | Good for fixed data    |
+
+```
+employees = ["Rahul", "Amit"]employees.append("Mujtoba")names = ("Rahul", "Amit")
+```
+
+### **4. What is the difference between&#x20;**`is`**&#x20;and&#x20;**`==`**?**
+
+`==` compares values, while `is` compares object identity.
+
+```
+a = [10, 20]b = [10, 20]print(a == b)  # Trueprint(a is b)  # False
+```
+
+### **5. What are mutable and immutable data types?**
+
+Mutable objects can be changed after creation, but immutable objects cannot.
+
+- Mutable: `list`, `dict`, `set`
+- Immutable: `int`, `float`, `str`, `tuple`, `frozenset`
+
+### **6. What is the difference between&#x20;**`append()`**&#x20;and&#x20;**`extend()`**?**
+
+```
+a = [1, 2]a.append([3, 4])print(a)  # [1, 2, [3, 4]]b = [1, 2]b.extend([3, 4])print(b)  # [1, 2, 3, 4]
+```
+
+`append()` adds one object; `extend()` adds elements from an iterable.
+
+### **7. What is a dictionary in Python?**
+
+A dictionary stores data as key-value pairs.
+
+```
+employee = {    "id": 101,    "name": "Rahul",    "salary": 50000}print(employee["name"])  # Rahul
+```
+
+### **8. What are&#x20;**`*args`**&#x20;and&#x20;**`**kwargs`**?**
+
+`*args` accepts extra positional arguments, and `**kwargs` accepts extra keyword arguments.
+
+```
+def employee(*args, **kwargs):    print(args)    print(kwargs)employee(101, "Rahul", department="IT")
+```
+
+### **9. What is list comprehension?**
+
+It is a concise way to create a list.
+
+```
+numbers = [1, 2, 3, 4, 5]squares = [n * n for n in numbers]print(squares)  # [1, 4, 9, 16, 25]
+```
+
+### **10. What is slicing in Python?**
+
+Slicing extracts parts of a sequence.
+
+```
+name = "Python"print(name[0:3])  # Pytprint(name[::-1]) # nohtyP
+```
+
+### **11. What is&#x20;**`None`**&#x20;in Python?**
+
+`None` represents the absence of a value.
+
+```
+result = Noneif result is None:    print("No value")
+```
+
+### **12. What is the difference between&#x20;**`break`**,&#x20;**`continue`**, and&#x20;**`pass`**?**
+
+- `break`: Exits a loop.
+- `continue`: Skips to the next iteration.
+- `pass`: Does nothing; acts as a placeholder.
+
+### **13. What is a lambda function?**
+
+A lambda is a small anonymous function.
+
+```
+square = lambda x: x * xprint(square(5))  # 25
+```
+
+### **14. What is exception handling?**
+
+It handles runtime errors without unexpectedly terminating the program.
+
+```
+try:    result = 10 / 0except ZeroDivisionError:    print("Cannot divide by zero")finally:    print("Execution completed")
+```
+
+### **15. What is the difference between&#x20;**`sort()`**&#x20;and&#x20;**`sorted()`**?**
+
+`sort()` modifies a list in place. `sorted()` returns a new sorted list and works with other iterables too.
+
+```
+numbers = [5, 2, 8, 1]result = sorted(numbers)print(result)   # [1, 2, 5, 8]print(numbers)  # [5, 2, 8, 1]numbers.sort()print(numbers)  # [1, 2, 5, 8]
+```
+
+## **Level 2: Python Functions and OOP (Questions 16–30)**
+
+**16. What is a decorator?**
+
+A function that wraps another function to extend its behavior without modifying its source code.
+
+**17. What is a generator?**
+
+A function that uses yield to produce values one at a time instead of returning them all at once.
+
+**18. What is an iterator?**
+
+An object implementing \_\_iter\_\_() and \_\_next\_\_() to provide sequential values.
+
+**19. What is the difference between yield and return?**
+
+return terminates a function and gives back a value; yield suspends a generator so it can resume later.
+
+**20. What is recursion?**
+
+A function calling itself until a base condition is satisfied.
+
+**21. What is the LEGB rule?**
+
+Python searches names in Local, Enclosing, Global, and Built-in scopes.
+
+**22. What is a closure?**
+
+An inner function that retains access to variables from its enclosing function.
+
+**23. What is shallow copy vs deep copy?**
+
+Shallow copy creates a new outer object but shares nested references; deep copy recursively copies nested objects.
+
+**24. What is \_\_init\_\_()?**
+
+An initializer method automatically invoked when an instance is created.
+
+**25. What is self?**
+
+The conventional name of the first parameter representing an instance in its methods.
+
+**26. What is inheritance?**
+
+A mechanism by which one class derives behavior and attributes from another class.
+
+**27. What is polymorphism?**
+
+Different objects can respond to the same operation or method interface in their own ways.
+
+**28. What is encapsulation?**
+
+Grouping data and methods within a class and controlling access through interfaces or conventions.
+
+**29. What is abstraction?**
+
+Exposing essential functionality while hiding implementation details.
+
+**30. What is method overriding?**
+
+A subclass provides its own implementation of a method inherited from a parent class.
+
+### **Practical OOP example**
+
+```
+class Employee:    def __init__(self, emp_id, name):        self.emp_id = emp_id        self.name = name    def display(self):        return f"{self.emp_id} - {self.name}"emp = Employee(101, "Mujtoba")print(emp.display())
+```
+
+Output:
+
+```
+101 - Mujtoba
+```
+
+## **Level 3: Advanced Python (Questions 31–45)**
+
+| No. | Interview question                 | Short answer                                                                                                                  |
+| --- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| 31  | What is the GIL?                   | In standard CPython builds, the Global Interpreter Lock normally allows only one thread to execute Python bytecode at a time. |
+| 32  | Multithreading vs multiprocessing? | Threads share process memory; processes have separate memory spaces.                                                          |
+| 33  | What is `async` / `await`?         | Syntax for writing asynchronous coroutines without blocking while awaiting supported operations.                              |
+| 34  | What is a context manager?         | An object that manages setup and cleanup, commonly used with `with`.                                                          |
+| 35  | What is a virtual environment?     | An isolated Python environment for project dependencies.                                                                      |
+| 36  | What is PIP?                       | Python's package installer.                                                                                                   |
+| 37  | What is a module?                  | A Python file containing reusable definitions and statements.                                                                 |
+| 38  | What is a package?                 | A way to organize related modules under a common namespace.                                                                   |
+| 39  | What is `__name__ == "__main__"`?  | Checks whether a module is being executed as the main program.                                                                |
+| 40  | What are type hints?               | Optional annotations describing expected types.                                                                               |
+| 41  | What is garbage collection?        | Automatic memory management, including cleanup of cyclic references in CPython.                                               |
+| 42  | What is a dataclass?               | A class using `@dataclass` to generate common methods such as `__init__`.                                                     |
+| 43  | What is monkey patching?           | Modifying classes or functions dynamically at runtime.                                                                        |
+| 44  | What is a Python descriptor?       | An object controlling attribute access using methods such as `__get__`.                                                       |
+| 45  | What are metaclasses?              | Classes that control how other classes are constructed.                                                                       |
+
+### **Example: async/await**
+
+```
+import asyncioasync def fetch_employee():    await asyncio.sleep(1)    return {"id": 101, "name": "Rahul"}async def main():    employee = await fetch_employee()    print(employee)asyncio.run(main())
+```
+
+## **Level 4: FastAPI and Backend Interview (Questions 46–60)**
+
+These questions are especially relevant for Python backend development.
+
+| No. | Question                                                 | Answer                                                                                                                         |
+| --- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 46  | What is FastAPI?                                         | A Python web framework for building APIs with type hints.                                                                      |
+| 47  | FastAPI vs Flask?                                        | FastAPI includes type-driven validation and automatic API documentation; Flask is a lightweight general-purpose web framework. |
+| 48  | What is Pydantic?                                        | A library for validating and parsing data using Python type annotations.                                                       |
+| 49  | What is Uvicorn?                                         | An ASGI web server commonly used with FastAPI.                                                                                 |
+| 50  | What is ASGI?                                            | Asynchronous Server Gateway Interface, a standard for Python web applications.                                                 |
+| 51  | What is dependency injection?                            | Providing required dependencies to functions instead of creating them directly inside each function.                           |
+| 52  | What is SQLAlchemy?                                      | A Python SQL toolkit and ORM library.                                                                                          |
+| 53  | What is CORS?                                            | A browser security mechanism controlling cross-origin requests.                                                                |
+| 54  | What is JWT authentication?                              | Authentication using signed JSON Web Tokens containing claims.                                                                 |
+| 55  | What is middleware?                                      | Code that processes requests and responses around endpoint execution.                                                          |
+| 56  | What is API pagination?                                  | Returning records in smaller batches using offset/limit or cursor-based pagination.                                            |
+| 57  | What is an ORM?                                          | Object-Relational Mapping, which maps Python objects to database records.                                                      |
+| 58  | What is Alembic?                                         | A database migration tool commonly used with SQLAlchemy.                                                                       |
+| 59  | What is `Depends()`?                                     | FastAPI's mechanism for declaring dependencies.                                                                                |
+| 60  | What is the difference between sync and async endpoints? | Sync endpoints use regular functions, while async endpoints use coroutines and can await nonblocking operations.               |
+
+### **Practical FastAPI interview example**
+
+```
+from fastapi import FastAPI, HTTPExceptionfrom pydantic import BaseModelapp = FastAPI()class Employee(BaseModel):    id: int    name: str    salary: floatemployees = {}@app.post("/employees", status_code=201)def create_employee(employee: Employee):    if employee.id in employees:        raise HTTPException(            status_code=409,            detail="Employee already exists"        )    employees[employee.id] = employee    return employee@app.get("/employees/{emp_id}")def get_employee(emp_id: int):    if emp_id not in employees:        raise HTTPException(            status_code=404,            detail="Employee not found"
+```
+
+This example stores data in memory for learning purposes; a production application should use persistent storage.
+
+## **Python Coding Interview Questions**
+
+Practice these 15 questions because interviewers frequently ask you to write and explain code.
+
+**Coding practice checklist**
+
+0 / 15 completed
+
+1\. Reverse a string
+
+Reverse "Python" without a built-in reverse method.
+
+2\. Find the second-largest number
+
+Find the second distinct largest number in an array.
+
+3\. Remove duplicates
+
+Remove duplicate values from a list while preserving order.
+
+4\. Count character frequency
+
+Count how many times each character appears in a string.
+
+5\. Check palindrome
+
+Check whether a string reads the same forward and backward.
+
+6\. Find missing number
+
+Find the missing number from 1 to N.
+
+7\. Sort dictionaries by value
+
+Sort an employee list by salary descending.
+
+8\. Find prime numbers
+
+Print all prime numbers between 1 and 100.
+
+9\. Generate Fibonacci series
+
+Generate the first N Fibonacci numbers.
+
+10\. Find common elements
+
+Find common elements between two lists.
+
+11\. Merge two dictionaries
+
+Combine dictionaries, handling duplicate keys.
+
+12\. Flatten a nested list
+
+Convert nested lists into a flat list.
+
+13\. Find duplicate numbers
+
+Identify repeated numbers in an array.
+
+14\. Find first non-repeating character
+
+Return the first character appearing exactly once.
+
+15\. Implement CRUD API
+
+Build employee CRUD endpoints using FastAPI.
+
+Reset progressStart practice
+
+## **Recommended interview preparation order**
+
+**Day 1–2: Python Fundamentals**
+
+Data types, lists, tuples, dictionaries, strings, loops and functions.
+
+**Day 3–4: OOP and Advanced Python**
+
+Classes, inheritance, decorators, generators, exceptions and async programming.
+
+**Day 5–6: FastAPI and Database**
+
+REST APIs, Pydantic, SQLAlchemy, PostgreSQL, authentication and validation.
+
+**Day 7: Coding and Mock Interview**
+
+Solve coding problems, explain your code and practice backend scenarios.
+
+**Next step:** Start with the basic 15 questions, then practice coding without looking at the solutions. For a Python Backend Developer interview, pay particular attention to **OOP, decorators, generators, async/await, FastAPI, SQLAlchemy, and PostgreSQL**.

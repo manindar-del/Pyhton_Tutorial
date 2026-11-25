@@ -309,16 +309,40 @@ a = [1,2,3,4,5]
 
 
 
-def loggers(func):
-    def wrapper():
-        print("First")
-        func()
-        print("second")
+# def loggers(func):
+#     def wrapper():
+#         print("First")
+#         func()
+#         print("second")
         
-    return wrapper
+#     return wrapper
 
-@loggers
-def user():
-    print("hello")    
+# @loggers
+# def user():
+#     print("hello")    
     
-user()
+# user()
+
+# class User:
+#     def __init__(self, name):
+#         self.name = name
+        
+#     def bark(self):
+#         return f"{self.name}"
+    
+# d1 = User("test")
+# print(d1.bark())
+
+ 
+numbers = [1,2,3,4]
+
+number=[
+    i*2
+    for i in numbers if i %2==0
+    
+]
+
+print(number)
+
+
+    
